@@ -71,6 +71,11 @@ let mapCharts (airports: Airport seq) (charts: ChartsResponse) =
 
 [<EntryPoint>]
 let main args =
+    let outputDir =
+        match Array.toList args with
+        | [] -> "./"
+        | arg::_ -> arg.TrimEnd( [| '/'; '\\' |] )
+    
     let config = Config()
     let airports = getAllAirports config
     let chartsResponse =
@@ -81,7 +86,11 @@ let main args =
     
     let viewModel = mapCharts airports chartsResponse.Result
     
+    match Directory.Exists(outputDir) with
+    | true -> ()
+    | false -> do Directory.CreateDirectory(outputDir) |> ignore
+    
     renderPage viewModel
     |> RenderView.AsString.htmlDocument
-    |> (fun s -> File.WriteAllText("../../../_public/index.html", s))
+    |> (fun s -> File.WriteAllText($"{outputDir}/index.html", s))
     0
