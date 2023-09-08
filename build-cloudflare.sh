@@ -7,3 +7,4 @@ chmod +x dotnet-install.sh
 ./dotnet/dotnet ./output/charts-site-generator.dll ./output/wwwroot
 npx tailwindcss -i ./style.css -o ./output/wwwroot/style.css
 cp ./script.js ./output/wwwroot
+cp ./favicon.ico ./output/wwwroot

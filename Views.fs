@@ -78,6 +78,7 @@ let renderPage (pageTitle: string) (viewModel: (Airport * Chart list) seq) =
               []
               [ title [] [ str pageTitle ]
                 link [ _rel "stylesheet"; _href "style.css" ]
+                link [ _rel "icon"; _type "image/x-icon"; _href "favicon.ico" ]
                 script [ _src "script.js" ] [] ]
           body
               [ _class "text-gray-300 h-full" ]
