@@ -51,12 +51,14 @@ let parseChart (chart: ChartDto) =
     | None -> None
 
 let mapCharts (airports: Airport seq) (charts: ChartsResponse) =
+    let sanitizeDtos = List.map parseChart >> List.choose id
     let getChartsForId key =
         match charts.TryGetValue($"K{key}") with
-        | true, c ->
-            let parsedCharts = List.map parseChart c |> List.choose id
-            parsedCharts
-        | false, _ -> []
+        | true, dtos -> sanitizeDtos dtos
+        | false, _ ->
+            match charts.TryGetValue($"{key}") with
+            | true, dtos -> sanitizeDtos dtos
+            | false, _ -> []
     
     let mapped =
         (Map.empty, airports)
