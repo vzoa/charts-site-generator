@@ -1,19 +1,27 @@
 ﻿module Common
 
-type AirportClass = Bravo | Charlie | Delta
-type ChartType = APD | MIN | LAH | HOT | STAR | IAP | DP | DAU
+type AirportClass =
+    | Bravo
+    | Charlie
+    | Delta
 
-type Chart = {
-    Airport: string
-    Name: string
-    Type: ChartType
-    PdfPath: string
-}
+type ChartType =
+    | APD
+    | MIN
+    | LAH
+    | HOT
+    | STAR
+    | IAP
+    | DP
+    | DAU
 
-type Airport = {
-    Id: string
-    Class: AirportClass
-}
+type Chart =
+    { Airport: string
+      Name: string
+      Type: ChartType
+      PdfPath: string }
+
+type Airport = { Id: string; Class: AirportClass }
 
 let parseChartType (s: string) =
     match s.ToUpper() with
