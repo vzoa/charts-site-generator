@@ -1,0 +1,29 @@
+﻿Airports:
+  Bravo:
+    - SFO
+  Charlie:
+    - OAK
+    - SJC
+    - SMF
+    - RNO
+    - FAT
+    - MRY
+  Delta:
+    - APC
+    - CCR
+    - CIC
+    - HWD
+    - LVK
+    - MER
+    - MHR
+    - MOD
+    - NUQ
+    - PAO
+    - RDD
+    - RHV
+    - SAC
+    - SCK
+    - SNS
+    - SQL
+    - STS
+    - TRK

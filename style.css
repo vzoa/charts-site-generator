@@ -1,0 +1,25 @@
+﻿@tailwind base;
+@tailwind components;
+
+.tablink-active {
+    @apply border-b-4;
+    @apply bg-gray-800;
+}
+
+.tablink {
+
+}
+
+.chartbutton-active {
+
+}
+
+.chartbutton {
+
+}
+
+@tailwind utilities;
+
+
+
+
