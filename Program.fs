@@ -91,7 +91,7 @@ let main args =
     | true -> ()
     | false -> do Directory.CreateDirectory(outputDir) |> ignore
 
-    renderPage viewModel
+    renderPage config.Title viewModel
     |> RenderView.AsString.htmlDocument
     |> (fun s -> File.WriteAllText($"{outputDir}/index.html", s))
 

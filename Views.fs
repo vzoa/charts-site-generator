@@ -63,7 +63,7 @@ let pdfViewer =
           __data "" ]
         []
 
-let renderPage (viewModel: (Airport * Chart list) seq) =
+let renderPage (pageTitle: string) (viewModel: (Airport * Chart list) seq) =
 
     let navContentSection = viewModel |> Seq.map fst |> navBar
 
@@ -76,7 +76,7 @@ let renderPage (viewModel: (Airport * Chart list) seq) =
         [ _class "font-mono bg-gray-800 h-full" ]
         [ head
               []
-              [ title [] [ str "Charts" ]
+              [ title [] [ str pageTitle ]
                 link [ _rel "stylesheet"; _href "style.css" ]
                 script [ _src "script.js" ] [] ]
           body
