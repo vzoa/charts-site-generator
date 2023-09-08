@@ -55,7 +55,7 @@ let parseChart (chart: ChartDto) =
     | None -> None
 
 let mapCharts (airports: Airport seq) (charts: ChartsResponse) =
-    let sanitizeDtos = List.map parseChart >> List.choose id
+    let sanitizeDtos = List.map parseChart >> List.choose id >> List.sortBy (chartToInt)
 
     let getChartsForId key =
         match charts.TryGetValue($"K{key}") with

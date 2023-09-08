@@ -41,3 +41,14 @@ let parseAirportClass (s: string) =
     | "CHARLIE" -> Some Charlie
     | "DELTA" -> Some Delta
     | _ -> None
+
+let chartToInt x =
+    match x.Type with
+    | APD -> 1
+    | MIN -> 2
+    | LAH -> 3
+    | HOT -> 3
+    | STAR -> 4
+    | IAP -> 5
+    | DP -> 6
+    | DAU -> 7
