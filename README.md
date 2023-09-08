@@ -1,7 +1,14 @@
 # What is this?
 A small program to generate static assets (html, CSS, js) for an FAA charts quick reference page. Inspired by https://charts.bvartcc.com/, using data and charts from https://www.aviationapi.com/.
 
+The ZOA version is hosted via Cloudflare Pages at https://charts.oakartcc.org/
+
 ![image](https://github.com/vzoa/charts-site-generator/assets/34892440/f2d6875a-c1bd-4a7d-aa6a-3738c6316313)
+
+# What is this built with?
+* F#
+* [Giraffe.ViewEngine](https://github.com/giraffe-fsharp/Giraffe.ViewEngine) for the HTML templates and rendering directly in F#
+* Tailwind for CSS
 
 # How can I build locally?
 If you are on Windows, use `build-local.ps1` which will build and place the output files in a `_public` folder. You will need to already have the [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) installed on your machine.
@@ -25,3 +32,6 @@ export default {
   },
 };
 ```
+
+# How can I edit the styling (font, colors, etc.)?
+The project uses Tailwind CSS, and much of the Tailwind styles are inlined in the templates in `Views.fs`. In the future, we may pull the styles out to a separate CSS file for easier modification.
