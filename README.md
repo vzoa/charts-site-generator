@@ -3,6 +3,9 @@ A small program to generate static assets (html, CSS, js) for an FAA charts quic
 
 ![image](https://github.com/vzoa/charts-site-generator/assets/34892440/f2d6875a-c1bd-4a7d-aa6a-3738c6316313)
 
+# How can I build locally?
+If you are on Windows, use `build-local.ps1` which will build and place the output files in a `_public` folder.
+
 # How can I deploy my own?
 1. Fork the repo to your own account/organization
 2. Edit the airports in `site_config.yaml`, split into `Bravo`, `Charlie` and `Delta` categories
