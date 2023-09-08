@@ -30,4 +30,7 @@ function openpdf(pdfUrl, elmnt) {
     // Set PdfViewer
     viewer.setAttribute("data", pdfUrl)
     viewer.classList.remove("hidden")
+    
+    // Set parent div background to white
+    viewer.parentElement.classList.add("bg-white")
 }
