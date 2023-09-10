@@ -1,21 +1,89 @@
 ﻿@tailwind base;
 @tailwind components;
 
+.html {
+    @apply font-mono;
+    @apply bg-gray-800;
+}
+
+.body {
+    @apply text-gray-300;
+}
+
+.nav {
+    @apply bg-gray-950;
+    @apply p-1;
+}
+
 .tablink-active {
     @apply border-b-4;
     @apply bg-gray-800;
 }
 
 .tablink {
-
+    @apply p-1;
+    @apply mx-1;
+    @apply hover:bg-gray-800;
 }
 
-.chartbutton-active {
+.airport-bravo {
+    @apply text-orange-600;
+}
 
+.airport-charlie {
+    @apply text-sky-600;
+}
+
+.airport-delta {
+    @apply text-gray-300;
+}
+
+.chartbutton-apd {
+    @apply border-green-500;
+}
+
+.chartbutton-min {
+    @apply border-orange-500;
+}
+
+.chartbutton-lah {
+    @apply border-yellow-500;
+}
+
+.chartbutton-hot {
+    @apply border-red-500;
+}
+
+.chartbutton-star {
+    @apply border-sky-500;
+}
+
+.chartbutton-iap {
+    @apply border-violet-500;
+}
+
+.chartbutton-dp {
+    @apply border-pink-500;
+}
+
+.chartbutton-dau {
+    @apply border-slate-500;
 }
 
 .chartbutton {
+    @apply hover:bg-gray-700;
+    @apply border;
+    @apply p-1;
+    @apply m-1;
+    @apply cursor-pointer;
+    @apply text-xs;
+    @apply w-32;
+    @apply h-12;
+}
 
+.chartbutton-active {
+    @apply bg-gray-700;
+    @apply font-extrabold;
 }
 
 @tailwind utilities;

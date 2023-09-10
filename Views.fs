@@ -6,13 +6,13 @@ open Common
 let classes = String.concat " "
 
 let tabButton airport airportClass =
-    let baseCssCls = "tablink p-1 mx-1 hover:bg-gray-800"
+    let baseCssCls = "tablink"
 
     let airportCssCls =
         match airportClass with
-        | Bravo -> "text-orange-600"
-        | Charlie -> "text-sky-600"
-        | Delta -> "text-gray-300"
+        | Bravo -> "airport-bravo"
+        | Charlie -> "airport-charlie"
+        | Delta -> "airport-delta"
 
     let cls = classes [ baseCssCls; airportCssCls ]
     let onclick = $"openpage('{airport}', this)"
@@ -22,22 +22,21 @@ let tabButton airport airportClass =
 let navBar (airports: Airport seq) =
     let buttons = airports |> Seq.map (fun a -> tabButton a.Id a.Class) |> Seq.toList
 
-    nav [ _class "bg-gray-950 flex items-center p-1" ] buttons
+    nav [ _class "nav flex items-center" ] buttons
 
 let chartButton (chart: Chart) =
-    let baseCssCls =
-        "chartbutton hover:bg-gray-700 border p-1 m-1 cursor-pointer text-xs w-32 h-12"
+    let baseCssCls = "chartbutton"
 
     let chartCssCls =
         match chart.Type with
-        | APD -> "border-green-500"
-        | MIN -> "border-orange-500"
-        | LAH -> "border-yellow-500"
-        | HOT -> "border-red-500"
-        | STAR -> "border-sky-500"
-        | IAP -> "border-violet-500"
-        | DP -> "border-pink-500"
-        | DAU -> "border-slate-500"
+        | APD -> "chartbutton-apd"
+        | MIN -> "chartbutton-min"
+        | LAH -> "chartbutton-lah"
+        | HOT -> "chartbutton-hot"
+        | STAR -> "chartbutton-star"
+        | IAP -> "chartbutton-iap"
+        | DP -> "chartbutton-dp"
+        | DAU -> "chartbutton-dau"
 
     let cls = classes [ baseCssCls; chartCssCls ]
     let chartId = $"{chart.Airport} {chart.Name}"
@@ -65,6 +64,8 @@ let pdfViewer =
 
 let renderPage (pageTitle: string) (viewModel: (Airport * Chart list) seq) =
 
+    let htmlStyle = classes []
+
     let navContentSection = viewModel |> Seq.map fst |> navBar
 
     let tabContentSection =
@@ -73,7 +74,7 @@ let renderPage (pageTitle: string) (viewModel: (Airport * Chart list) seq) =
         |> Seq.toList
 
     html
-        [ _class "font-mono bg-gray-800 h-full" ]
+        [ _class "html h-full" ]
         [ head
               []
               [ title [] [ str pageTitle ]
@@ -81,7 +82,7 @@ let renderPage (pageTitle: string) (viewModel: (Airport * Chart list) seq) =
                 link [ _rel "icon"; _type "image/x-icon"; _href "favicon.ico" ]
                 script [ _src "script.js" ] [] ]
           body
-              [ _class "text-gray-300 h-full" ]
+              [ _class "body h-full" ]
               [ div [] [ navContentSection ]
                 div
                     [ _class "flex flex-row h-full" ]

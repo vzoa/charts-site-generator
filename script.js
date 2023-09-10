@@ -25,12 +25,12 @@ function openpdf(pdfUrl, elmnt) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("chartbutton-active")
     }
-    elmnt.classList.add("chart-active")
-    
+    elmnt.classList.add("chartbutton-active")
+
     // Set PdfViewer
     viewer.setAttribute("data", pdfUrl)
     viewer.classList.remove("hidden")
-    
+
     // Set parent div background to white
     viewer.parentElement.classList.add("bg-white")
 }
