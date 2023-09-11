@@ -34,4 +34,4 @@ export default {
 ```
 
 # How can I edit the styling (font, colors, etc.)?
-The project uses Tailwind CSS, and much of the Tailwind styles are inlined in the templates in `Views.fs`. In the future, we may pull the styles out to a separate CSS file for easier modification.
+The project uses Tailwind CSS. You can edit the styling via the classes in `style.css` using Tailwind's `@apply` directive. The included build scripts will build the final output css from this input file.
