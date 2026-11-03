@@ -2,8 +2,8 @@
 > **This repository has been archived and is no longer maintained.**  
 > 
 > This project (`charts-site-generator`) is no longer under active development and has been archived. It is superseded by [**`vzoa/chartsapi-rs`**](https://github.com/vzoa/chartsapi-rs). 
-> 
-> Please update your bookmarks and refer to the new repository for all future updates, issues, and contributions.
+>
+> Note that `chartsapi-rs` does not store the chart files. It will return a link to the chart file hosted by the FAA.
 
 # What is this?
 A small program to generate static assets (html, CSS, js) for an FAA charts quick reference page. Inspired by https://charts.bvartcc.com/, using data and charts from https://www.aviationapi.com/.
